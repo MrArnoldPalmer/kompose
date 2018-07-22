@@ -23,6 +23,10 @@
     "\"ADTs\"",
     "\"composition\"]"
   ],
+  "jest": {
+    "moduleFileExtensions": ["js", "jsx", "json", "ts", "tsx"],
+    "testMatch": ["**/__tests__/**/*.ts?(x)", "**/?(*.)+(spec|test).ts?(x)"]
+  },
   "author": "Mitchell Valine",
   "license": "MIT",
   "bugs": {

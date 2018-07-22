@@ -12,6 +12,8 @@
 	},
 	"dependencies": {},
 	"scripts": {
-		"lerna": "lerna"
+		"lerna": "lerna",
+                "build": "lerna run build",
+                "test": "lerna run test"
 	}
 }
