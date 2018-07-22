@@ -1,0 +1,29 @@
+{
+  "name": "@kompose/core",
+  "version": "0.0.1",
+  "description": "Plain ol' function composition tools",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "tsc \"src/index.ts\" && babel src --out-dir build --extensions \".ts,.tsx\" --files \"src/index.ts\"",
+    "type-check": "tsc --noEmit",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrarnoldpalmer/kompose.git"
+  },
+  "keywords": [
+    "[\"js\"",
+    "\"javascript\"",
+    "\"functional",
+    "programming\"",
+    "\"ADTs\"",
+    "\"composition\"]"
+  ],
+  "author": "Mitchell Valine",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrarnoldpalmer/kompose/issues"
+  },
+  "homepage": "https://github.com/mrarnoldpalmer/kompose#readme"
+}
