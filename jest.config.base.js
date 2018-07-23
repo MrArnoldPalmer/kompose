@@ -1,4 +1,14 @@
 module.exports = {
-    moduleFileExtensions: ["js", "jsx", "json", "ts", "tsx"],
-    testMatch: ["**/__tests__/**/*.ts?(x)", "**/?(*.)+(spec|test).ts?(x)"]
+    transform: {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    testMatch: ["**/__tests__/**/*.ts?(x)", "**/?(*.)+(spec|test).ts?(x)"],
+    moduleFileExtensions: [
+        "ts",
+        "tsx",
+        "js",
+        "jsx",
+        "json",
+        "node"
+    ]
 };

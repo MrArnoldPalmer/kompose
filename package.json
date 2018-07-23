@@ -18,7 +18,7 @@
 		"lerna": "lerna",
 		"bootstrap": "lerna bootstrap --hoist",
 		"build": "lerna run build",
-		"test": "lerna run test",
-		"test:local": "jest"
+		"test": "lerna run test --stream",
+		"jest": "jest"
 	}
 }

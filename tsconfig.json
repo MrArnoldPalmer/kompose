@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "pretty": true,
+        "declaration": true,
+        "emitDeclarationOnly": true,
+        "outDir": "build"
+    },
+    "files": [
+        "src/index.ts"
+    ]
+}
