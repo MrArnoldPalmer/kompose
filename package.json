@@ -19,8 +19,9 @@
 		"lerna": "lerna",
 		"bootstrap": "lerna bootstrap --hoist",
 		"build": "lerna run build",
-		"test": "lerna run test --stream",
 		"clean": "lerna run clean",
-		"coverage": "lerna run coverage --stream"
+		"coverage": "lerna run coverage --stream",
+		"test": "lerna run test --stream",
+		"test:watch": "lerna run test:watch --stream"
 	}
 }

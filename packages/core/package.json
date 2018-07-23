@@ -9,7 +9,8 @@
     "build": "npm run build:ts && npm run build:cjs",
     "clean": "rimraf build esm coverage",
     "coverage": "jest --coverage",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "repository": {
     "type": "git",
