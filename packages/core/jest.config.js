@@ -5,6 +5,6 @@ module.exports = {
     name: "@kompose/core",
     displayName: "@kompose/core",
     collectCoverageFrom: [
-        "**/src/**"
+        "src/**/*.{ts,tsx}"
     ]
 };

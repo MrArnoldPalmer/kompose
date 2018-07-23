@@ -7,7 +7,8 @@
     "build:cjs": "babel src --out-dir build --extensions \".ts,.tsx\"",
     "build:ts": "tsc",
     "build": "npm run build:ts && npm run build:cjs",
-    "type-check": "tsc --noEmit",
+    "clean": "rimraf build esm coverage",
+    "coverage": "jest --coverage",
     "test": "jest"
   },
   "repository": {
@@ -27,8 +28,5 @@
   "bugs": {
     "url": "https://github.com/mrarnoldpalmer/kompose/issues"
   },
-  "homepage": "https://github.com/mrarnoldpalmer/kompose#readme",
-  "devDependencies": {
-    "ts-jest": "^23.0.1"
-  }
+  "homepage": "https://github.com/mrarnoldpalmer/kompose#readme"
 }
