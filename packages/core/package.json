@@ -5,12 +5,15 @@
   "main": "build/index.js",
   "scripts": {
     "build:cjs": "babel src --out-dir build --extensions \".ts,.tsx\"",
-    "build:ts": "tsc",
+    "build:ts": "tsc --emitDeclarationOnly",
     "build": "npm run build:ts && npm run build:cjs",
     "clean": "rimraf build esm coverage",
     "coverage": "jest --coverage",
+    "dev": "concurrently \"npm:types:watch\" \"npm:test:watch\"",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "types": "tsc --noEmit",
+    "types:watch": "tsc --noEmit --watch"
   },
   "repository": {
     "type": "git",
