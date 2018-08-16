@@ -1,5 +1,6 @@
 module.exports = {
   parser: "typescript",
   semi: false,
-  bracketSpacing: false
+  bracketSpacing: false,
+  trailingCommas: "all"
 };

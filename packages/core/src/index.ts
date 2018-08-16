@@ -62,8 +62,8 @@ export const get = (key, val) => val[key]
 export const getIn = (keys, val) =>
   reduce((accum, key) => get(key, accum), val, keys)
 
-const assocArr = (key, val, arr) => Object.assign([...arr], { [key]: val })
-const assocObj = (key, val, obj) => Object.assign({ ...obj }, { [key]: val })
+const assocArr = (key, val, arr) => Object.assign([...arr], {[key]: val})
+const assocObj = (key, val, obj) => Object.assign({...obj}, {[key]: val})
 export const assoc = (key, val, data) =>
   apply(Array.isArray(data) ? assocArr : assocObj, [key, val, data])
 
@@ -81,5 +81,5 @@ export const toggleIn = (val, arr) =>
 
 export const add = (x, y) => x + y
 
-export const merge = (x, y) => ({ ...x, ...y })
+export const merge = (x, y) => ({...x, ...y})
 export const reverse = x => x.reverse()

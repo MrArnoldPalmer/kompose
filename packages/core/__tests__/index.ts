@@ -59,7 +59,7 @@ describe("Utils", () => {
 
   describe("get", () => {
     it("accepts a string key and an object and returns the value at that key", () => {
-      const subject = K.get("key", { key: "VALUE" })
+      const subject = K.get("key", {key: "VALUE"})
       expect(subject).toEqual("VALUE")
     })
 
@@ -71,7 +71,7 @@ describe("Utils", () => {
 
   describe("getIn", () => {
     it("accepts an array of string keys and returns the corresponding nested value inside an object", () => {
-      const subject = K.getIn(["x", "y", "z"], { x: { y: { z: "VALUE" } } })
+      const subject = K.getIn(["x", "y", "z"], {x: {y: {z: "VALUE"}}})
       expect(subject).toEqual("VALUE")
     })
 
@@ -81,14 +81,14 @@ describe("Utils", () => {
     })
 
     it("accepts an array of string keys and integers and returns the corresponding value inside a complex data structure", () => {
-      const subject = K.getIn(["x", 0, "y", 1], { x: [{ y: [0, "VALUE"] }] })
+      const subject = K.getIn(["x", 0, "y", 1], {x: [{y: [0, "VALUE"]}]})
       expect(subject).toEqual("VALUE")
     })
   })
 
   describe("assoc", () => {
     it("accepts a string key, a value, and an object and returns a new object with the objects key associated with the new value", () => {
-      const subject = K.assoc("x", "VALUE", { x: "ORIGINAL" })
+      const subject = K.assoc("x", "VALUE", {x: "ORIGINAL"})
       expect(subject).toEqual({
         x: "VALUE"
       })
@@ -103,7 +103,7 @@ describe("Utils", () => {
   describe("assocIn", () => {
     it("accepts an array of string keys, a value, and an object and returns a new object with the nested value associated with the nested keys", () => {
       const subject = K.assocIn(["x", "y", "z"], "VALUE", {
-        x: { y: { z: "ORIGINAL" } }
+        x: {y: {z: "ORIGINAL"}}
       })
       expect(subject).toEqual({
         x: {
@@ -121,9 +121,9 @@ describe("Utils", () => {
 
     it("accepts an array of mixed string keys and integers, a value, and an array and returns a new complex data structure with the value associated with the nested path", () => {
       const subject = K.assocIn(["x", 0, "y", 1], "VALUE", {
-        x: [{ y: [0, "ORIGINAL"] }]
+        x: [{y: [0, "ORIGINAL"]}]
       })
-      expect(subject).toEqual({ x: [{ y: [0, "VALUE"] }] })
+      expect(subject).toEqual({x: [{y: [0, "VALUE"]}]})
     })
   })
 
