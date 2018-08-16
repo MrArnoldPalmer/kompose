@@ -2,10 +2,12 @@
     "compilerOptions": {
         "pretty": true,
         "declaration": true,
-        "outDir": "build"
+        "outDir": "build",
+        "target": "ESNext"
     },
     "files": [
-        "src/index.ts"
+        "src/index.ts",
+        "__tests__/index.ts"
     ],
     "types": [
         "jest"
