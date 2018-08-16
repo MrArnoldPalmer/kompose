@@ -31,9 +31,16 @@ describe("Utils", () => {
   })
 
   describe("reduce", () => {
-    it("applies a function to an accumulated value and each item in an array, accumulator initial value is specified", () => {
-      const subject = K.reduce((a, x) => a + x, 0, [1, 2, 3])
-      expect(subject).toEqual(6)
+    it("applies a function to an accumulated value and each item in an array from left to right, accumulator initial value is specified", () => {
+      const subject = K.reduce((a, x) => `${a}${x}`, 0, [1, 2, 3])
+      expect(subject).toEqual("0123")
+    })
+  })
+
+  describe("reduceRight", () => {
+    it("applies a function to an accumulated value and each item in an array from right to left, accumulator initial value is specified", () => {
+      const subject = K.reduceRight((a, x) => `${a}${x}`, 4, [1, 2, 3])
+      expect(subject).toEqual("4321")
     })
   })
 
@@ -132,6 +139,11 @@ describe("Utils", () => {
       const subject = K.contains("x", ["x", "y"])
       expect(subject).toBe(true)
     })
+
+    it("accepts a value and an array and returns false if the value is not an element in the array", () => {
+      const subject = K.contains("z", ["x", "y"])
+      expect(subject).toBe(false)
+    })
   })
 
   describe("append", () => {
@@ -141,10 +153,17 @@ describe("Utils", () => {
     })
   })
 
-  describe("equal", () => {
-    it("returns true if both arguments are strictly (===) equal", () => {
-      const subject = K.equals("1", "1")
-      expect(subject).toBe(true)
+  describe("concat", () => {
+    it("accepts two arrays and returns a new array with the elements of the second appended to the first", () => {
+      const subject = K.concat([1, 2, 3], [4, 5, 6])
+      expect(subject).toEqual([1, 2, 3, 4, 5, 6])
+    })
+  })
+
+  describe("remove", () => {
+    it("accepts a value and an array and returns a new array with any of the values removed from the original", () => {
+      const subject = K.remove(1, [1, 2, 3])
+      expect(subject).toEqual([2, 3])
     })
   })
 
@@ -157,6 +176,36 @@ describe("Utils", () => {
     it("removes a value from an array if it is already an element", () => {
       const subject = K.toggleIn("VALUE", ["ORIGINAL", "VALUE"])
       expect(subject).toEqual(["ORIGINAL"])
+    })
+  })
+
+  describe("equals", () => {
+    it("returns true if both arguments are strictly (===) equal", () => {
+      const subject = K.equals("1", "1")
+      expect(subject).toBe(true)
+    })
+  })
+
+  describe("add", () => {
+    it("accepts two numbers and returns the sum", () => {
+      const subject = K.add(1, 2)
+      expect(subject).toEqual(3)
+    })
+  })
+
+  describe("merge", () => {
+    it("accepts two objects and returns a single object with properties merged between the two", () => {
+      const subject = K.merge({x: "x"}, {y: "y"})
+      expect(subject).toEqual({x: "x", y: "y"})
+    })
+  })
+
+  describe("reverse", () => {
+    it("accepts and array and returns a new array with elements reversed", () => {
+      const input = [1, 2, 3]
+      const subject = K.reverse(input)
+      expect(input).toEqual([1, 2, 3])
+      expect(subject).toEqual([3, 2, 1])
     })
   })
 })
